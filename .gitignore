@@ -1,3 +1,9 @@
+.idea
+run.ts
+
+# Lib
+lib
+
 # Logs
 logs
 *.log

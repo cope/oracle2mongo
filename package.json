@@ -1,0 +1,84 @@
+{
+	"name": "oracle2mongo",
+	"version": "0.1.0",
+	"description": "Quick Oracle 2 Mongo copy",
+	"main": "./lib/o2m.js",
+	"types": "./lib/o2m.d.ts",
+	"scripts": {
+		"all": "yarn & yarn build & yarn test & yarn docs",
+		"build": "tsc",
+		"build:watch": "tsc --watch",
+		"lint": "tslint -p tsconfig.json",
+		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+		"docs": "typedoc --out docs src",
+		"test": "nyc mocha -r ts-node/register test/**/*.spec.ts",
+		"coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
+		"sonar": "sonarjs -e .sonarlint/**,node_modules/**,coverage/**,.nyc_output/**",
+		"latest-interactive": "yarn upgrade-interactive --latest",
+		"latest": "yarn upgrade --latest"
+	},
+	"files": [
+		"lib/**/*"
+	],
+	"nyc": {
+		"include": [
+			"src/**/*.ts"
+		],
+		"exclude": [
+			"test/**/*.ts"
+		],
+		"extension": [
+			".ts"
+		],
+		"require": [
+			"ts-node/register"
+		],
+		"reporter": [
+			"text-summary",
+			"html"
+		],
+		"sourceMap": true,
+		"instrument": true
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cope/oracle2mongo.git"
+	},
+	"keywords": [
+		"oracle",
+		"mongo",
+		"mongodb",
+		"data",
+		"copy"
+	],
+	"author": "Predrag Stojadinovic",
+	"license": "UNLICENSED",
+	"bugs": {
+		"url": "https://github.com/cope/oracle2mongo/issues"
+	},
+	"homepage": "https://github.com/cope/oracle2mongo#readme",
+	"dependencies": {
+		"@types/lodash": "^4.14.120",
+		"@types/mongodb": "^3.1.19",
+		"@types/oracledb": "^1.11.34",
+		"lodash": "^4.17.11",
+		"mongodb": "^3.1.13",
+		"oracledb": "^3.1.1"
+	},
+	"devDependencies": {
+		"@types/chai": "^4.1.7",
+		"@types/mocha": "^5.2.5",
+		"chai": "^4.1.2",
+		"coveralls": "^3.0.2",
+		"mocha": "^5.2.0",
+		"nyc": "^13.1.0",
+		"prettier": "^1.15.3",
+		"sonarjs": "^1.0.0",
+		"source-map-support": "^0.5.9",
+		"ts-node": "^8.0.2",
+		"tslint": "^5.11.0",
+		"tslint-config-prettier": "^1.17.0",
+		"typedoc": "^0.14.0",
+		"typescript": "^3.2.2"
+	}
+}
