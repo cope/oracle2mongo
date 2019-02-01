@@ -35,6 +35,9 @@ Quick Oracle 2 Mongo copy
 	// output dir is optional - if passed, there will be a json file per oracle table created, with all data
 	let outputDir = '<somewhere>/<someDir>';
 
-	new O2M(oracle, mongo, outputDir).copy()
+	// exclude array is optional - if passed, tables listed in the array will be excluded from copy
+	let exclude = ['some_table', 'other_table'];
+
+	new O2M(oracle, mongo, outputDir).copy(exclude)
 		.then(() => true)
 		.catch(err => console.error);
