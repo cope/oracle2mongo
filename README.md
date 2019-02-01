@@ -3,16 +3,16 @@
 </a>
 
 # oracle2mongo
-[![build status](https://img.shields.io/travis/prefko/oracle2mongo.svg?branch=master)](https://travis-ci.org/prefko/oracle2mongo)
-[![codacy](https://img.shields.io/codacy/grade/07b287618ee8467da981a039baea0b10.svg)](https://www.codacy.com/project/prefko/oracle2mongo/dashboard)
-[![dependencies](https://david-dm.org/prefko/oracle2mongo.svg)](https://www.npmjs.com/package/oracle2mongo)
+[![build status](https://img.shields.io/travis/cope/oracle2mongo.svg?branch=master)](https://travis-ci.org/cope/oracle2mongo)
+[![codacy](https://img.shields.io/codacy/grade/07b287618ee8467da981a039baea0b10.svg)](https://www.codacy.com/project/cope/oracle2mongo/dashboard)
+[![dependencies](https://david-dm.org/cope/oracle2mongo.svg)](https://www.npmjs.com/package/oracle2mongo)
 [![npm](https://img.shields.io/npm/dt/oracle2mongo.svg)](https://www.npmjs.com/package/oracle2mongo)
 
 preferans player paper
 
 ### Documentation
 
-[TypeDoc documentation](https://prefko.github.io/oracle2mongo/docs/)
+[TypeDoc documentation](https://cope.github.io/oracle2mongo/docs/)
 
 ### Usage
 
