@@ -16,7 +16,7 @@ Quick Oracle 2 Mongo copy
 
 ### Usage
 
-	import O2M from "./src/o2m";
+	import O2M from "oracle2mongo";
 	
 	// all attributes are *required*
 	const mongo = {
