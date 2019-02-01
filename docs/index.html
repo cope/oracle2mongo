@@ -64,8 +64,40 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
+				<a href="http://stojadinovic.net">
+					<img alt="Predrag Stojadinovic" src="https://en.stojadinovic.net/assets/images/logo-128x128-88.jpg" width="100">
+				</a>
 				<h1 id="oracle2mongo">oracle2mongo</h1>
-				<p>oracle2mongo</p>
+				<p><a href="https://travis-ci.org/cope/oracle2mongo"><img src="https://img.shields.io/travis/cope/oracle2mongo.svg?branch=master" alt="build status"></a>
+					<a href="https://www.codacy.com/project/cope/oracle2mongo/dashboard"><img src="https://img.shields.io/codacy/grade/07b287618ee8467da981a039baea0b10.svg" alt="codacy"></a>
+					<a href="https://www.npmjs.com/package/oracle2mongo"><img src="https://david-dm.org/cope/oracle2mongo.svg" alt="dependencies"></a>
+				<a href="https://www.npmjs.com/package/oracle2mongo"><img src="https://img.shields.io/npm/dt/oracle2mongo.svg" alt="npm"></a></p>
+				<p>Quick Oracle 2 Mongo copy</p>
+				<h3 id="documentation">Documentation</h3>
+				<p><a href="https://cope.github.io/oracle2mongo/docs/">TypeDoc documentation</a></p>
+				<h3 id="usage">Usage</h3>
+				<pre><code><span class="hljs-keyword">import</span> O2M <span class="hljs-keyword">from</span> <span class="hljs-string">"./src/o2m"</span>;
+
+<span class="hljs-comment">// all attributes are *required*</span>
+<span class="hljs-keyword">const</span> mongo = {
+    <span class="hljs-attr">database</span>: <span class="hljs-string">'&lt;mongodb-database-name&gt;'</span>,
+    <span class="hljs-attr">server</span>: <span class="hljs-string">'mongodb://localhost:27017/'</span>
+};
+
+<span class="hljs-comment">// all attributes are *required*</span>
+<span class="hljs-keyword">const</span> oracle = {
+    <span class="hljs-attr">user</span>: <span class="hljs-string">"&lt;oracle-username&gt;"</span>,
+    <span class="hljs-attr">password</span>: <span class="hljs-string">"&lt;oracle-password&gt;"</span>,
+    <span class="hljs-attr">connectString</span>: <span class="hljs-string">"&lt;oracle-host&gt;:&lt;oracle-port&gt;/&lt;oracle-service-or-sid&gt;"</span>,
+    <span class="hljs-attr">owner</span>: <span class="hljs-string">"&lt;oracle-owner&gt;"</span>
+};
+
+<span class="hljs-comment">// output dir is optional - if passed, there will be a json file per oracle table created, with all data</span>
+<span class="hljs-keyword">let</span> outputDir = <span class="hljs-string">'&lt;somewhere&gt;/&lt;someDir&gt;'</span>;
+
+<span class="hljs-keyword">new</span> O2M(oracle, mongo, outputDir).copy()
+    .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-literal">true</span>)
+    .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> <span class="hljs-built_in">console</span>.error);</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

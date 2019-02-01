@@ -18,18 +18,23 @@ Quick Oracle 2 Mongo copy
 
 	import O2M from "./src/o2m";
 	
+	// all attributes are *required*
 	const mongo = {
 		database: '<mongodb-database-name>',
 		server: 'mongodb://localhost:27017/'
 	};
 	
+	// all attributes are *required*
 	const oracle = {
 		user: "<oracle-username>",
 		password: "<oracle-password>",
 		connectString: "<oracle-host>:<oracle-port>/<oracle-service-or-sid>",
 		owner: "<oracle-owner>"
 	};
-	
-	new O2M(oracle, mongo).copy()
+
+	// output dir is optional - if passed, there will be a json file per oracle table created, with all data
+	let outputDir = '<somewhere>/<someDir>';
+
+	new O2M(oracle, mongo, outputDir).copy()
 		.then(() => true)
 		.catch(err => console.error);
