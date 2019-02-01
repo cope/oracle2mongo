@@ -8,7 +8,7 @@
 [![dependencies](https://david-dm.org/cope/oracle2mongo.svg)](https://www.npmjs.com/package/oracle2mongo)
 [![npm](https://img.shields.io/npm/dt/oracle2mongo.svg)](https://www.npmjs.com/package/oracle2mongo)
 
-preferans player paper
+Quick Oracle 2 Mongo copy
 
 ### Documentation
 
