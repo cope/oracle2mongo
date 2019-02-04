@@ -10,11 +10,11 @@
 
 Quick Oracle 2 Mongo copy
 
-### Documentation
+## Documentation
 
 [TypeDoc documentation](https://cope.github.io/oracle2mongo/docs/)
 
-### Usage
+## Usage
 
 	import O2M from "oracle2mongo";
 	
