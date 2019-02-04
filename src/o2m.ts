@@ -25,9 +25,13 @@ const extractTableNames = (tableNamesResponse: IExecuteReturn, exclude: string[]
 };
 
 const row2obj = (columns: string[], row: any): object => {
-	const obj: any = {};
-	_.forEach(row, (x) => obj[columns[x]] = row[x]);
-
+	let obj: any = {};
+	for (let i in row) {
+		if (columns.hasOwnProperty(i) && row.hasOwnProperty(i)) {
+			// @ts-ignore
+			obj[columns[i]] = row[i];
+		}
+	}
 	return obj;
 };
 
