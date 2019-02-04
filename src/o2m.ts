@@ -63,6 +63,11 @@ export default class O2M {
 		return this;
 	}
 
+	public unverbose(): O2M {
+		this._verbose = false;
+		return this;
+	}
+
 	public async copy(exclude: string[] = []): Promise<O2M> {
 
 		await this.mongoClear();
