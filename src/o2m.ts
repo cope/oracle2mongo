@@ -31,7 +31,7 @@ const row2obj = (columns: string[], row: any): object => {
 	return obj;
 };
 
-export class O2M {
+export default class O2M {
 	private readonly _oracle: OracleConfigObject;
 	private readonly _mongo: MongoConfigObject;
 	private readonly _outputDir: string;

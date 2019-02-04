@@ -1,6 +1,6 @@
 {
 	"name": "oracle2mongo",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"description": "Quick Oracle 2 Mongo copy",
 	"main": "./lib/o2m.js",
 	"types": "./lib/o2m.d.ts",
