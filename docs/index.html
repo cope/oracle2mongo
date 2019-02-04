@@ -73,31 +73,34 @@
 					<a href="https://www.npmjs.com/package/oracle2mongo"><img src="https://david-dm.org/cope/oracle2mongo.svg" alt="dependencies"></a>
 				<a href="https://www.npmjs.com/package/oracle2mongo"><img src="https://img.shields.io/npm/dt/oracle2mongo.svg" alt="npm"></a></p>
 				<p>Quick Oracle 2 Mongo copy</p>
-				<h3 id="documentation">Documentation</h3>
+				<h2 id="documentation">Documentation</h2>
 				<p><a href="https://cope.github.io/oracle2mongo/docs/">TypeDoc documentation</a></p>
-				<h3 id="usage">Usage</h3>
-				<pre><code><span class="hljs-keyword">import</span> O2M <span class="hljs-keyword">from</span> <span class="hljs-string">"./src/o2m"</span>;
+				<h2 id="usage">Usage</h2>
+				<pre><code><span class="hljs-keyword">import</span> O2M <span class="hljs-keyword">from</span> "oracle2mongo";
 
-<span class="hljs-comment">// all attributes are *required*</span>
-<span class="hljs-keyword">const</span> mongo = {
-    <span class="hljs-attr">database</span>: <span class="hljs-string">'&lt;mongodb-database-name&gt;'</span>,
-    <span class="hljs-attr">server</span>: <span class="hljs-string">'mongodb://localhost:27017/'</span>
+// <span class="hljs-keyword">all</span> attributes are *required*
+const mongo = {
+    <span class="hljs-keyword">database</span>: <span class="hljs-string">'&lt;mongodb-database-name&gt;'</span>,
+    <span class="hljs-keyword">server</span>: <span class="hljs-string">'mongodb://localhost:27017/'</span>
 };
 
-<span class="hljs-comment">// all attributes are *required*</span>
-<span class="hljs-keyword">const</span> oracle = {
-    <span class="hljs-attr">user</span>: <span class="hljs-string">"&lt;oracle-username&gt;"</span>,
-    <span class="hljs-attr">password</span>: <span class="hljs-string">"&lt;oracle-password&gt;"</span>,
-    <span class="hljs-attr">connectString</span>: <span class="hljs-string">"&lt;oracle-host&gt;:&lt;oracle-port&gt;/&lt;oracle-service-or-sid&gt;"</span>,
-    <span class="hljs-attr">owner</span>: <span class="hljs-string">"&lt;oracle-owner&gt;"</span>
+// <span class="hljs-keyword">all</span> attributes are *required*
+const oracle = {
+    <span class="hljs-keyword">user</span>: "&lt;oracle-username&gt;",
+    <span class="hljs-keyword">password</span>: "&lt;oracle-password&gt;",
+    connectString: "&lt;oracle-host&gt;:&lt;oracle-port&gt;/&lt;oracle-service-or-sid&gt;",
+    <span class="hljs-keyword">owner</span>: "&lt;oracle-owner&gt;"
 };
 
-<span class="hljs-comment">// output dir is optional - if passed, there will be a json file per oracle table created, with all data</span>
-<span class="hljs-keyword">let</span> outputDir = <span class="hljs-string">'&lt;somewhere&gt;/&lt;someDir&gt;'</span>;
+// output dir <span class="hljs-keyword">is</span> optional - <span class="hljs-keyword">if</span> passed, there will be a <span class="hljs-type">json</span> file per oracle <span class="hljs-keyword">table</span> created, <span class="hljs-keyword">with</span> <span class="hljs-keyword">all</span> data
+let outputDir = <span class="hljs-string">'&lt;somewhere&gt;/&lt;someDir&gt;'</span>;
 
-<span class="hljs-keyword">new</span> O2M(oracle, mongo, outputDir).copy()
-    .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-literal">true</span>)
-    .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> <span class="hljs-built_in">console</span>.error);</code></pre>
+// <span class="hljs-keyword">exclude</span> <span class="hljs-keyword">array</span> <span class="hljs-keyword">is</span> optional - <span class="hljs-keyword">if</span> passed, <span class="hljs-keyword">tables</span> listed <span class="hljs-keyword">in</span> the <span class="hljs-keyword">array</span> will be excluded <span class="hljs-keyword">from</span> <span class="hljs-keyword">copy</span>
+let <span class="hljs-keyword">exclude</span> = [<span class="hljs-string">'some_table'</span>, <span class="hljs-string">'other_table'</span>];
+
+<span class="hljs-built_in">new</span> O2M(oracle, mongo, outputDir).<span class="hljs-keyword">copy</span>(<span class="hljs-keyword">exclude</span>)
+    .<span class="hljs-keyword">then</span>(() =&gt; <span class="hljs-keyword">true</span>)
+    .catch(err =&gt; console.error);</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
