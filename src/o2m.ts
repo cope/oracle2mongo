@@ -72,7 +72,6 @@ export class O2M {
 
 		try {
 			const connection: IConnection = await oracledb.getConnection(this._oracle);
-			if (!connection) throw new Error("O2M::copy:Failed to connect to Oracle.");
 
 			const tableNamesResponse: IExecuteReturn = await connection.execute(this._oracleQuery);
 			const tableNames: string[] = extractTableNames(tableNamesResponse, exclude);

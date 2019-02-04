@@ -64,8 +64,8 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="http://stojadinovic.net">
-					<img alt="Predrag Stojadinovic" src="https://en.stojadinovic.net/assets/images/logo-128x128-88.jpg" width="100">
+				<a href='http://stojadinovic.net'>
+					<img alt='Predrag Stojadinovic' src='https://en.stojadinovic.net/assets/images/logo-128x128-88.jpg' width='100'>
 				</a>
 				<h1 id="oracle2mongo">oracle2mongo</h1>
 				<p><a href="https://travis-ci.org/cope/oracle2mongo"><img src="https://img.shields.io/travis/cope/oracle2mongo.svg?branch=master" alt="build status"></a>
@@ -76,9 +76,10 @@
 				<h2 id="documentation">Documentation</h2>
 				<p><a href="https://cope.github.io/oracle2mongo/docs/">TypeDoc documentation</a></p>
 				<h2 id="usage">Usage</h2>
-				<pre><code><span class="hljs-keyword">import</span> O2M <span class="hljs-keyword">from</span> "oracle2mongo";
-
-// <span class="hljs-keyword">all</span> attributes are *required*
+				<h3 id="es6">ES6</h3>
+				<pre><code><span class="hljs-keyword">const</span> O2M = <span class="hljs-built_in">require</span>(<span class="hljs-string">'oracle2mongo'</span>).<span class="hljs-keyword">default</span>;</code></pre><h3 id="typescript">TypeScript</h3>
+				<pre><code><span class="hljs-keyword">import</span> O2M <span class="hljs-keyword">from</span> <span class="hljs-string">'oracle2mongo'</span>;</code></pre><h4 id="es6-and-typescript-cont-">ES6 and TypeScript    cont.</h4>
+				<pre><code>// <span class="hljs-keyword">all</span> attributes are *required*
 const mongo = {
     <span class="hljs-keyword">database</span>: <span class="hljs-string">'&lt;mongodb-database-name&gt;'</span>,
     <span class="hljs-keyword">server</span>: <span class="hljs-string">'mongodb://localhost:27017/'</span>
@@ -86,17 +87,17 @@ const mongo = {
 
 // <span class="hljs-keyword">all</span> attributes are *required*
 const oracle = {
-    <span class="hljs-keyword">user</span>: "&lt;oracle-username&gt;",
-    <span class="hljs-keyword">password</span>: "&lt;oracle-password&gt;",
-    connectString: "&lt;oracle-host&gt;:&lt;oracle-port&gt;/&lt;oracle-service-or-sid&gt;",
-    <span class="hljs-keyword">owner</span>: "&lt;oracle-owner&gt;"
+    <span class="hljs-keyword">user</span>: <span class="hljs-string">'&lt;oracle-username&gt;'</span>,
+    <span class="hljs-keyword">password</span>: <span class="hljs-string">'&lt;oracle-password&gt;'</span>,
+    connectString: <span class="hljs-string">'&lt;oracle-host&gt;:&lt;oracle-port&gt;/&lt;oracle-service-or-sid&gt;'</span>,
+    <span class="hljs-keyword">owner</span>: <span class="hljs-string">'&lt;oracle-owner&gt;'</span>
 };
 
 // output dir <span class="hljs-keyword">is</span> optional - <span class="hljs-keyword">if</span> passed, there will be a <span class="hljs-type">json</span> file per oracle <span class="hljs-keyword">table</span> created, <span class="hljs-keyword">with</span> <span class="hljs-keyword">all</span> data
-let outputDir = <span class="hljs-string">'&lt;somewhere&gt;/&lt;someDir&gt;'</span>;
+const outputDir = <span class="hljs-string">'&lt;somewhere&gt;/&lt;someDir&gt;'</span>;
 
 // <span class="hljs-keyword">exclude</span> <span class="hljs-keyword">array</span> <span class="hljs-keyword">is</span> optional - <span class="hljs-keyword">if</span> passed, <span class="hljs-keyword">tables</span> listed <span class="hljs-keyword">in</span> the <span class="hljs-keyword">array</span> will be excluded <span class="hljs-keyword">from</span> <span class="hljs-keyword">copy</span>
-let <span class="hljs-keyword">exclude</span> = [<span class="hljs-string">'some_table'</span>, <span class="hljs-string">'other_table'</span>];
+const <span class="hljs-keyword">exclude</span> = [<span class="hljs-string">'some_table'</span>, <span class="hljs-string">'other_table'</span>];
 
 <span class="hljs-built_in">new</span> O2M(oracle, mongo, outputDir)
     .<span class="hljs-keyword">verbose</span>()        // &lt;- optional
