@@ -48,7 +48,7 @@ export default class O2M {
 		this._mongo = mongo;
 		this._outputDir = outputDir || '';
 		this._output = !_.isEmpty(this._outputDir);
-		if (this._output && _.endsWith(this._outputDir, '/')) this._outputDir += '/';
+		if (this._output && !_.endsWith(this._outputDir, '/')) this._outputDir += '/';
 
 		this._oracleQuery = "SELECT table_name FROM dba_tables WHERE owner='" + this._oracle.owner + "' ORDER BY table_name";
 
