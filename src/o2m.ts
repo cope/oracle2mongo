@@ -58,8 +58,9 @@ export default class O2M {
 		if (this._output) clearOutputDir(this._outputDir);
 	}
 
-	set verbose(verbose: boolean) {
-		this._verbose = verbose;
+	public verbose(): O2M {
+		this._verbose = true;
+		return this;
 	}
 
 	public async copy(exclude: string[] = []): Promise<O2M> {

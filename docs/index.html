@@ -98,7 +98,9 @@ let outputDir = <span class="hljs-string">'&lt;somewhere&gt;/&lt;someDir&gt;'</s
 // <span class="hljs-keyword">exclude</span> <span class="hljs-keyword">array</span> <span class="hljs-keyword">is</span> optional - <span class="hljs-keyword">if</span> passed, <span class="hljs-keyword">tables</span> listed <span class="hljs-keyword">in</span> the <span class="hljs-keyword">array</span> will be excluded <span class="hljs-keyword">from</span> <span class="hljs-keyword">copy</span>
 let <span class="hljs-keyword">exclude</span> = [<span class="hljs-string">'some_table'</span>, <span class="hljs-string">'other_table'</span>];
 
-<span class="hljs-built_in">new</span> O2M(oracle, mongo, outputDir).<span class="hljs-keyword">copy</span>(<span class="hljs-keyword">exclude</span>)
+<span class="hljs-built_in">new</span> O2M(oracle, mongo, outputDir)
+    .<span class="hljs-keyword">verbose</span>()        // &lt;- optional
+    .<span class="hljs-keyword">copy</span>(<span class="hljs-keyword">exclude</span>)
     .<span class="hljs-keyword">then</span>(() =&gt; <span class="hljs-keyword">true</span>)
     .catch(err =&gt; console.error);</code></pre>
 			</div>

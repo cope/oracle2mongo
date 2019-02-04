@@ -38,6 +38,8 @@ Quick Oracle 2 Mongo copy
 	// exclude array is optional - if passed, tables listed in the array will be excluded from copy
 	let exclude = ['some_table', 'other_table'];
 
-	new O2M(oracle, mongo, outputDir).copy(exclude)
+	new O2M(oracle, mongo, outputDir)
+		.verbose()		// <- optional
+		.copy(exclude)
 		.then(() => true)
 		.catch(err => console.error);
