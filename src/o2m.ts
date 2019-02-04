@@ -24,14 +24,10 @@ const extractTableNames = (tableNamesResponse: IExecuteReturn, exclude: string[]
 	return _.filter(tableNames, (name) => !name.includes(' ') && !name.includes('$') && !_.includes(exclude, name));
 };
 
-const row2obj = (columns: string[], row: any): any => {
+const row2obj = (columns: string[], row: any): object => {
 	const obj: any = {};
-	for (const x in row) {
-		if (columns.hasOwnProperty(x) && row.hasOwnProperty(x)) {
-			// @ts-ignore
-			obj[columns[x]] = row[x];
-		}
-	}
+	_.forEach(row, (x) => obj[columns[x]] = row[x]);
+
 	return obj;
 };
 
@@ -97,7 +93,7 @@ export default class O2M {
 					for (const row of results) {
 						rowIndex++;
 
-						const obj: any = row2obj(columns, row);
+						const obj: object = row2obj(columns, row);
 						await this._db.collection(table).insertOne(obj);
 
 						const objString: string = JSON.stringify(obj);
